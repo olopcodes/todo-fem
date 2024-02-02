@@ -1,0 +1,24 @@
+:root {
+    --primary-bright-blue: hsl(220, 98%, 61%);
+    --check-bg: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+
+    --light-theme-gray: hsl(0, 0%, 98%);
+    --light-theme-very-light-gray-blue: hsl(236, 33%, 92%);
+    --light-theme-light-gray-blue: hsl(233, 11%, 84%);
+    --light-theme-dark-gray-blue: hsl(236, 9%, 61%);
+    --light-theme-very-dark-gray-blue: hsl(235, 19%, 35%);
+
+    --dark-theme-very-dark-gray-blue-2:hsl(237, 14%, 26%);
+    --dark-theme-very-dark-gray-blue-1:hsl(233, 14%, 35%);
+    --dark-theme-dark-gray-blue:hsl(234, 11%, 52%);
+    --dark-theme-light-gray-blue--hover:hsl(236, 33%, 92%);
+    --dark-theme-light-gray-blue:hsl(234, 39%, 85%);
+    --dark-theme-very-dark-desat-blue:hsl(235, 24%, 19%);
+    --dark-theme-very-dark-blue: hsl(235, 21%, 11%);
+
+    --defaut-font-size: 18px;
+    --deafault-font-family: 'Josefin Sans', sans-serif;
+    --fw-light: 200;
+    --fw-norm: 400;
+    --fw-bold: 700;
+}
