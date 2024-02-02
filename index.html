@@ -15,7 +15,88 @@
 </head>
 <body>
 
-  
+  <div class="app">
+    <header class="todo-header"></header>
+    <div class="todo-container">
+      <input id="todo-input" type="text" class="todo-input" placeholder="Create a new todo...">
+
+      <ul class="todo-list">
+        <!-- item one -->
+        <li class="todo-item todo-complete">
+          <button class="todo-check-btn">
+            <img src="./images/icon-check.svg" alt="check">
+          </button>
+          
+          <button class="todo-delete-btn">
+            <img src="./images/icon-cross.svg" alt="delete">
+          </button>
+            <p class="todo-text">code</p>
+          </li>
+
+          <!-- todo item -->
+        <li class="todo-item">
+          <button class="todo-check-btn">
+            <img src="./images/icon-check.svg" alt="check">
+          </button>
+          
+          <button class="todo-delete-btn">
+            <img src="./images/icon-cross.svg" alt="delete">
+          </button>
+            <p class="todo-text">game</p>
+         </li>
+         
+         <!-- item -->
+        <li class="todo-item">
+          <button class="todo-check-btn">
+            <img src="./images/icon-check.svg" alt="check">
+          </button>
+          
+          <button class="todo-delete-btn">
+            <img src="./images/icon-cross.svg" alt="delete">
+          </button>
+            <p class="todo-text">sleep</p>
+          </li>
+
+            <!-- todo item -->
+        <li class="todo-item">
+          <button class="todo-check-btn">
+            <img src="./images/icon-check.svg" alt="check">
+          </button>
+          
+          <button class="todo-delete-btn">
+            <img src="./images/icon-cross.svg" alt="delete">
+          </button>
+            <p class="todo-text">eat</p>
+          </li>  
+
+          <!-- item -->
+        <li class="todo-item">
+          <button class="todo-check-btn">
+            <img src="./images/icon-check.svg" alt="check">
+          </button>
+          
+          <button class="todo-delete-btn">
+            <img src="./images/icon-cross.svg" alt="delete">
+          </button>
+            <p class="todo-text">read</p>
+        </li>
+        <!-- stats -->
+        <li class="todo-stats">
+          <p class="todo-left">5 items left</p>
+          <button id="todo-clear" class="todo-btn">clear completed</button>
+        </li>
+      </ul>
+
+      <div class="todo-filter-box">
+        <button class="todo-btn" id="todo-all">all</button>
+        <button class="todo-btn" id="todo-active">active</button>
+        <button class="todo-btn" id="todo-completed">comlpeted</button>
+      </div>
+    </div>
+
+    <p class="todo-drag-text">Drag and drop to reorder list</p>
+  </div>
+  <footer> <small>olopcodes &copy; 2024</small></footer>
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
