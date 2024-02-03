@@ -194,7 +194,8 @@ footer {
 
 .todo-item {
     border-bottom: 1px solid var(--light-theme-light-gray-blue);
-
+    justify-content: start;
+    gap: 25px;
 }
 
 .todo-text {
@@ -209,6 +210,7 @@ footer {
 
 .todo-delete-btn {
     order: 3;
+    margin-left: auto;
 }
 
 .todo-delete-btn img {
