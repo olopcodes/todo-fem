@@ -250,11 +250,13 @@ footer {
     font-weight: 700;
 }
 
-.complete .todo-circle img {
+.complete .todo-circle img,
+.todo-input-container .todo-input-circle:hover img {
     transform: scale(1);
 }
 
-.complete .todo-circle {
+.complete .todo-circle,
+.todo-input-container .todo-circle:hover {
    background-image: var(--check-bg);
 }
 
@@ -284,6 +286,6 @@ footer {
     }
 
     .todo-header {
-        background-image: url('./images/bg-desktop-dark.jpg');
+        background-image: url('./images/bg-desktop-light.jpg');
     }
 }
