@@ -13,88 +13,109 @@
   <link rel="stylesheet" href="style.css">
   
 </head>
-<body>
+<body id="light-theme">
 
   <div class="app">
-    <header class="todo-header"></header>
-    <div class="todo-container">
-      <input id="todo-input" type="text" class="todo-input" placeholder="Create a new todo...">
-
-      <ul class="todo-list">
-        <!-- item one -->
-        <li class="todo-item todo-complete">
-          <button class="todo-check-btn">
-            <img src="./images/icon-check.svg" alt="check">
-          </button>
-          
-          <button class="todo-delete-btn">
-            <img src="./images/icon-cross.svg" alt="delete">
-          </button>
-            <p class="todo-text">code</p>
-          </li>
-
-          <!-- todo item -->
-        <li class="todo-item">
-          <button class="todo-check-btn">
-            <img src="./images/icon-check.svg" alt="check">
-          </button>
-          
-          <button class="todo-delete-btn">
-            <img src="./images/icon-cross.svg" alt="delete">
-          </button>
-            <p class="todo-text">game</p>
-         </li>
-         
-         <!-- item -->
-        <li class="todo-item">
-          <button class="todo-check-btn">
-            <img src="./images/icon-check.svg" alt="check">
-          </button>
-          
-          <button class="todo-delete-btn">
-            <img src="./images/icon-cross.svg" alt="delete">
-          </button>
-            <p class="todo-text">sleep</p>
-          </li>
-
-            <!-- todo item -->
-        <li class="todo-item">
-          <button class="todo-check-btn">
-            <img src="./images/icon-check.svg" alt="check">
-          </button>
-          
-          <button class="todo-delete-btn">
-            <img src="./images/icon-cross.svg" alt="delete">
-          </button>
-            <p class="todo-text">eat</p>
-          </li>  
-
-          <!-- item -->
-        <li class="todo-item">
-          <button class="todo-check-btn">
-            <img src="./images/icon-check.svg" alt="check">
-          </button>
-          
-          <button class="todo-delete-btn">
-            <img src="./images/icon-cross.svg" alt="delete">
-          </button>
-            <p class="todo-text">read</p>
-        </li>
-        <!-- stats -->
-        <li class="todo-stats">
-          <p class="todo-left">5 items left</p>
-          <button id="todo-clear" class="todo-btn">clear completed</button>
-        </li>
-      </ul>
-
-      <div class="todo-filter-box">
-        <button class="todo-btn" id="todo-all">all</button>
-        <button class="todo-btn" id="todo-active">active</button>
-        <button class="todo-btn" id="todo-completed">comlpeted</button>
+    <header class="todo-header">
+      <div class="container">
+        <h1>TODO</h1>
+        <button class="todo-btn-theme theme--light">
+          <img src="./images/icon-moon.svg" alt="">
+        </button>
       </div>
-    </div>
+    </header>
+    <div class="todo-container">
+      <div class="container">
+        <div class="todo-input-container">
+          <button id="add-todo" class="todo-input-circle todo-circle"></button>
+          <input id="todo-input" type="text" class="todo-input" placeholder="Create a new todo...">
+        </div>
+        
+
+        <ul class="todo-list">
+          <!-- item one -->
+          <li class="todo-item">
+            <button class="todo-check-btn todo-circle">
+              <img src="./images/icon-check.svg" alt="check">
+            </button>
+            
+            <button class="todo-delete-btn">
+              <img src="./images/icon-cross.svg" alt="delete">
+            </button>
+              <p class="todo-text">code</p>
+            </li>
+  
+            <!-- todo item -->
+          <li class="todo-item">
+            <button class="todo-check-btn todo-circle">
+              <img src="./images/icon-check.svg" alt="check">
+            </button>
+            
+            <button class="todo-delete-btn">
+              <img src="./images/icon-cross.svg" alt="delete">
+            </button>
+              <p class="todo-text">game</p>
+           </li>
+           
+           <!-- item -->
+          <li class="todo-item">
+            <button class="todo-check-btn todo-circle">
+              <img src="./images/icon-check.svg" alt="check">
+            </button>
+            
+            <button class="todo-delete-btn">
+              <img src="./images/icon-cross.svg" alt="delete">
+            </button>
+              <p class="todo-text">sleep</p>
+            </li>
+  
+              <!-- todo item -->
+          <li class="todo-item">
+            <button class="todo-check-btn todo-circle">
+              <img src="./images/icon-check.svg" alt="check">
+            </button>
+            
+            <button class="todo-delete-btn">
+              <img src="./images/icon-cross.svg" alt="delete">
+            </button>
+              <p class="todo-text">eat</p>
+            </li>  
+  
+            <!-- item -->
+          <li class="todo-item">
+            <button class="todo-check-btn todo-circle">
+              <img src="./images/icon-check.svg" alt="check">
+            </button>
+            
+            <button class="todo-delete-btn">
+              <img src="./images/icon-cross.svg" alt="delete">
+            </button>
+              <p class="todo-text">read</p>
+          </li>
+          <!-- stats -->
+          <li class="todo-stats">
+            <p class="todo-left"> <span>5</span> items left</p>
+            <button id="todo-clear" class="todo-btn">clear completed</button>
+          </li>
+        </ul>
+
+        <div class="todo-filter-box">
+          <button class="todo-btn" id="todo-all">all</button>
+          <button class="todo-btn" id="todo-active">active</button>
+          <button class="todo-btn" id="todo-completed">comlpeted</button>
+        </div>
 
     <p class="todo-drag-text">Drag and drop to reorder list</p>
+
+
+      </div>
+      
+
+      
+
+      
+    </div>
+
   </div>
   <footer> <small>olopcodes &copy; 2024</small></footer>
 
