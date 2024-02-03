@@ -178,12 +178,15 @@ footer {
 }
 
 .todo-list {
+    display: flex;
+    flex-direction: column;
     margin: 25px 0;
     border-radius: 4px;
     background-color: var(--light-theme-gray);
     box-shadow: 0px 10px 20px 10px rgba(0,0,0,.05);
 
 }
+
 
 .todo-item, .todo-stats,.todo-filter-box {
     display: flex;
@@ -196,6 +199,7 @@ footer {
     border-bottom: 1px solid var(--light-theme-light-gray-blue);
     justify-content: start;
     gap: 25px;
+    order: 1;
 }
 
 .todo-text {
@@ -222,6 +226,7 @@ footer {
 }
 
 .todo-stats {
+    order: 2;
     color: var(--light-theme-dark-gray-blue);
 }
 
@@ -247,9 +252,14 @@ footer {
     border-color: var(--primary-bright-blue);
 }
 
-.active, .todo-btn:hover {
+.active {
     color: var(--primary-bright-blue);
     font-weight: 700;
+    text-decoration: underline;
+}
+
+.todo-btn:hover {
+    color: var(--primary-bright-blue);
 }
 
 .complete .todo-circle img,
@@ -276,6 +286,10 @@ footer {
 footer {
     background-color: var(--light-theme-very-light-gray-blue);
     color: var(--light-theme-gray);
+}
+
+.hide {
+    display: none;
 }
 
 @media screen and (min-width: 980px) {
