@@ -85,6 +85,10 @@ footer {
     color: var(--dark-theme-dark-gray-blue);
 }
 
+#dark-theme footer {
+    background-color: var(--dark-theme-very-dark-gray-blue-2);
+}
+
 
 
 .app {
@@ -256,6 +260,12 @@ footer {
     color: var(--primary-bright-blue);
     font-weight: 700;
     text-decoration: underline;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 1;
+    color: rgba(0,0,0,.2) ;
 }
 
 .todo-btn:hover {
