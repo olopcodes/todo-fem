@@ -161,6 +161,7 @@ $(document).ready(function () {
 
 
       } else if($(e.target).attr('id') === 'todo-completed') {
+
         // get completed todos
         for(let i = data.length-1; i >= 0; i--) {
           if(data[i].completed) {
@@ -171,7 +172,9 @@ $(document).ready(function () {
 
       let html = '';
       
-      
+      // if todos array is empty
+      if(todos.length === 0) return;
+
       $.each($(todos), function (indexInArray, valueOfElement) { 
 
           html += todoHTML(todos[indexInArray]);
