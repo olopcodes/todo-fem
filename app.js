@@ -8,19 +8,28 @@ $(document).ready(function () {
     const todoStatsEl = $('.todo-stats');
     const todosLeftSpan = $('.todo-left span');
     const todoFiltersBoxEl = $('.todo-filter-box');
+    const modalBtn = $('.todo-btn-modal');
     const data = [];
 
     // listeners
 
-    // add todo handler ===========================
+    // theme handler ===========================
     $(themeBtnEl).click(function(e) {
       toggleThemeColor();
     })
 
+    // modal btn handler ========================
+    $(modalBtn).click(function(e) {
+      $('.todo-modal-wrapper').addClass('hide');
+    })
 
+    // todo handler =================================
     $(addTodoBtn).click(function (e) { 
         e.preventDefault();
-        if(todoInput.val().length >= 3) {
+
+        const isInputValid = validateTodo($(todoInput).val());
+
+        if(isInputValid) {
             // get value from input
             const newTodoText = todoInput.val();
 
@@ -31,7 +40,7 @@ $(document).ready(function () {
             data.push(todoObj);
 
             // form todo html in this function
-            const newTodoEl = todoHMTL(newTodoText, todoObj.id);
+            const newTodoEl = todoHTML(todoObj);
 
             // add new todo to the list
             $(todoListEl).append(newTodoEl);
@@ -45,14 +54,12 @@ $(document).ready(function () {
             // show drag text when more than 1 todo present
             toggleDragText();
 
-        } else {
-            alert('todo needs to be more than 3 characters')
-        }
+        } 
         // clear todo input
         todoInput.val(''); 
     });
 
-    // todo list handler
+    // todo list handler =========================================
     $(todoListEl).click(function (e) {
       // capture button
       const buttonEl = $(e.target).closest('button');
@@ -121,8 +128,6 @@ $(document).ready(function () {
             $(`#${data[indexInArray].id} .todo-delete-btn`).removeClass('hide');
            }
         });
-
-
       }
 
       toggleDisbaledClass();
@@ -131,8 +136,14 @@ $(document).ready(function () {
       getTodosLeft();
     });
 
+
+    // filter todos ===============================
+
     $(todoFiltersBoxEl).click(function(e) {
       let todos = [];
+
+      $('.todo-btn').removeClass('active');
+      $(e.target).addClass('active');
       
       if($(e.target).attr('id') === 'todo-all') {
         // get all todos 
@@ -150,7 +161,6 @@ $(document).ready(function () {
 
 
       } else if($(e.target).attr('id') === 'todo-completed') {
-
         // get completed todos
         for(let i = data.length-1; i >= 0; i--) {
           if(data[i].completed) {
@@ -164,12 +174,13 @@ $(document).ready(function () {
       
       $.each($(todos), function (indexInArray, valueOfElement) { 
 
-          html += todoHMTL(todos[indexInArray].text);
+          html += todoHTML(todos[indexInArray]);
       });
 
-      // clear todoList
-      todoListEl.html('');
+      // remove todo items from dom
+      $('.todo-item').remove();
 
+      // add todos filtered to dom
       todoListEl.append(html);
     })
 
@@ -187,10 +198,33 @@ $(document).ready(function () {
       }
     }
     
+    // sort and drop todo items ==============================
+    function sortable () {
+        // make list sortable except for this item
+        $(todoListEl).sortable({
+          cancel: ".todo-stats",
+          placeholder: 'highlight'
+     });
+    }
 
-    function todoHMTL (text, id) { 
+
+    //  validate todos ========================
+    function validateTodo(text) {
+      // check if text has a number
+      const hasNumber = /\d/g;
+      const hasSpecialCharacter = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+      if(hasNumber.test(text) || text.length < 3 ||hasSpecialCharacter.test(text)) {
+        $('.todo-modal-wrapper').removeClass('hide');
+        return false
+      } else {
+        return true;
+      }
+      
+    }
+
+    function todoHTML (data) { 
         return `
-        <li id="${id}" class="todo-item">
+        <li id="${data.id}" class="todo-item ${data.completed ? 'complete' : ''}">
         <button class="todo-check-btn todo-circle">
           <img src="./images/icon-check.svg" alt="check">
         </button>
@@ -198,7 +232,7 @@ $(document).ready(function () {
         <button class="todo-delete-btn">
           <img src="./images/icon-cross.svg" alt="delete">
         </button>
-          <p class="todo-text">${text}</p>
+          <p class="todo-text">${data.text}</p>
         </li>
         `
      } 
@@ -220,6 +254,8 @@ $(document).ready(function () {
 
     function toggleDragText() {
       if(data.length >= 2) {
+        sortable();
+
         $('.todo-drag-text').removeClass('hide')   
       } else {
         $('.todo-drag-text').addClass('hide')
@@ -227,11 +263,15 @@ $(document).ready(function () {
     }
 
     function showStatsAndFilters () {
-      // show stats box;
+      if(data.length > 0) {
+        // show stats box;
       todoStatsEl.removeClass('hide');
 
       // show filter box
       todoFiltersBoxEl.removeClass('hide');
+      }
+
+      
     }
 
     function updateCompletedTodos (todoId, boolean) {
