@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [https://olopcodes.github.io/todo-fem/](click here to view)
+- Live Site URL: [click here](https://olopcodes.github.io/todo-fem/)
 
 ## My process
 
